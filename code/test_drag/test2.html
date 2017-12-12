@@ -1,0 +1,97 @@
+    <html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>drag</title>
+
+</head>
+    
+    
+<body>
+    
+    <div id="droparea" draggable="false" style="position: absolute; z-index: 100; left: 0px; right: 0px; top: 0px; bottom: 0px;" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">
+        <div draggable="true" id="draggable1" ondragstart="drag(this,event)" style="z-index: 200; width: 200px; height: 20px; border: 2px solid red; background: none repeat scroll 0% 0% green; font-weight: bold; margin: 10px;">Drag me 1</div>
+        <div draggable="true" id="draggable2" ondragstart="drag(this,event)" style="z-index: 200; width: 200px; height: 20px; border: 2px solid red; background: none repeat scroll 0% 0% green; font-weight: bold; margin: 10px;">Drag me 2</div>
+        <div draggable="true" id="draggable3" ondragstart="drag(this,event)" style="z-index: 200; width: 200px; height: 20px; border: 2px solid red; background: none repeat scroll 0% 0% green; font-weight: bold; margin: 10px;">Drag me 3</div>
+    </div>
+    
+    <div style="cursor: pointer; position: absolute; z-index: 1000; left: 382px; top: 78.2px;" id="ball" width="40" height="40"><img src="https://js.cx/clipart/ball.svg" ><div id="entete">
+                <div class="plus"><h1><a href="">+</a></h1></div>
+                <div class="titre"><h1>LA CHAISE</h1></div>
+                <div class="croix"><h1>X</h1></div>
+            </div>
+            
+            <a href="pages/projet1.html"><div class=imageprojet></div></a>
+            
+            
+        </div>
+    
+    
+    
+    
+    
+    <script charset="utf-8" type="text/javascript">
+	  var offsetx = null, offsety = null;
+        function drag(target, event) {
+		if (!target.draggable) return;
+		offsetx = target.offsetLeft-event.clientX;
+		offsety = target.offsetTop-event.clientY;
+            event.dataTransfer.setData('Text',target.id);
+        }
+ 
+        function drop(target, event) {
+            var id = event.dataTransfer.getData('Text');
+		if (!id) return;
+            var e = document.getElementById(id);
+            e.style.position = "absolute";
+            e.style.left = (event.clientX+offsetx)+"px";
+            e.style.top = (event.clientY+offsety)+"px";        
+            event.preventDefault();
+        }
+        
+        
+        
+        ball.onmousedown = function(event) {
+
+  let shiftX = event.clientX - ball.getBoundingClientRect().left;
+  let shiftY = event.clientY - ball.getBoundingClientRect().top;
+
+  ball.style.position = 'absolute';
+  ball.style.zIndex = 1000;
+  document.body.append(ball);
+
+  moveAt(event.pageX, event.pageY);
+
+  // centers the ball at (pageX, pageY) coordinates
+  function moveAt(pageX, pageY) {
+    ball.style.left = pageX - shiftX + 'px';
+    ball.style.top = pageY - shiftY + 'px';
+  }
+
+  function onMouseMove(event) {
+    moveAt(event.pageX, event.pageY);
+  }
+
+  // (3) move the ball on mousemove
+  document.addEventListener('mousemove', onMouseMove);
+
+  // (4) drop the ball, remove unneeded handlers
+  ball.onmouseup = function() {
+    document.removeEventListener('mousemove', onMouseMove);
+    ball.onmouseup = null;
+  };
+
+};
+
+ball.ondragstart = function() {
+  return false;
+};
+    </script>
+    
+    
+    </body>
+    
+    
+    </html>
