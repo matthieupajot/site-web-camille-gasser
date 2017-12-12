@@ -131,6 +131,12 @@
     <script>
       /*FONCTION z-index*/
       jQuery(function($) {
+        var breakpoint = 1200;
+
+        var mustDrag = function() {
+          return window.innerWidth >= breakpoint;
+        };
+
         //    var maxz = $('.dragme:last').css("zIndex");
         var windowTemplate = $($("#windowTemplate").clone());
         $("#windowTemplate").remove();
@@ -180,16 +186,18 @@
         });
 
         /*RETENIR LA POSITION DES FENETRES*/
-        var windowStates = JSON.parse(localStorage.windowStates || "{}");
-        var windowState, currentWindow;
-        for(var windowId in windowStates) {
-          currentWindow = document.getElementById(windowId);
-          if(currentWindow) {
-            windowState = windowStates[windowId];
-            if(windowState.visible) $(currentWindow).show();
+        if(mustDrag()) {
+          var windowStates = JSON.parse(localStorage.windowStates || "{}");
+          var windowState, currentWindow;
+          for(var windowId in windowStates) {
+            currentWindow = document.getElementById(windowId);
+            if(currentWindow) {
+              windowState = windowStates[windowId];
+              if(windowState.visible) $(currentWindow).show();
 
-            currentWindow.style.top = windowState.top + 'px';
-            currentWindow.style.left = windowState.left + 'px';
+              currentWindow.style.top = windowState.top + 'px';
+              currentWindow.style.left = windowState.left + 'px';
+            }
           }
         }
 
@@ -228,12 +236,6 @@
               els[i].classList.add("dragme");
             }
           }
-        };
-
-        var breakpoint = 1200;
-
-        var mustDrag = function() {
-          return window.innerWidth >= breakpoint;
         };
 
         /* FONCTION DRAG */
