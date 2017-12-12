@@ -225,10 +225,14 @@
         window.onresize = function(){
           var w = window.innerWidth;
           var els = document.querySelectorAll('.fenetre');
-          if(w < 1024) {
+          var el;
+          if(w < breakpoint) {
             console.log('hidden');
             for(var i=0; i< els.length; i++) {
-              els[i].classList.remove("dragme", "hguyg", "gyytt");
+              el = els[i];
+              el.classList.remove("dragme", "hguyg", "gyytt");
+              el.style.top = null;
+              el.style.left = null;
             }
           }
           else {
