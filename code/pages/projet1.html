@@ -1,33 +1,42 @@
 <html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
 
-<link rel="stylesheet" type="text/css" href="../css/mobiles.css">
-<link rel="stylesheet" type="text/css" href="../css/tablettes.css" media="screen and (min-width:481px)">
-<link rel="stylesheet" type="text/css" href="../css/style.css" media="screen and (min-width:961px)">
-<title>Camille Gasser - La chaise</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>Camille Gasser - La chaise</title>
 
 </head>
-    
-    
+
+
 <body>
 
-	<section class="projects">
-            
-            <nav class="entete_projets">
-                <div class="about"><img src="../images/pictogrammes/about.png"></div>
-                <h2 class="titre2">la chaise</h2>
-                <div class="prev" onclick="plusSlides(-1)"><img src="../images/pictogrammes/precedent.png"></div>
-                <div class="next" onclick="plusSlides(1)"><img src="../images/pictogrammes/suivant.png"></div>
-                <a class="croix_projets" href="../index.html"><img src="../images/pictogrammes/croix.png"></a>
-            </nav>
-            
+
+
+    <section class="projects">
+        <!--EN TETE-->
+        <nav class="entete_projets">
+            <div class="about_project"><img src="../images/pictogrammes/about.png"></div>
+            <h2 class="titre2">la chaise</h2>
+            <div class="prev" onclick="plusSlides(-1)"><img src="../images/pictogrammes/precedent.png"></div>
+            <div class="next" onclick="plusSlides(1)"><img src="../images/pictogrammes/suivant.png"></div>
+            <a class="croix_projets" href="../index.html"><img src="../images/pictogrammes/croix.png"></a>
+        </nav>
+        
+        <!--SLIDER ET TEXTE-->
         <div class="image_p">
+            <div class="about_text2">
+                <div class="about_text_wrapper2">
+                    <h2>Photographie argentique - stickers</h2>
+                    <p>
+                        Ego vero sic intellego, Patres conscripti, nos hoc tempore in provinciis decernendis perpetuae pacis habere oportere rationem. Nam quis hoc non sentit omnia alia esse nobis vacua ab omni periculo atque etiam suspicione belli? Nam quibusdam, quos audio sapientes habitos in Graecia, placuisse opinor mirabilia quaedam (sed nihil est quod illi non persequantur argutiis): partim fugiendas esse nimias amicitias, ne necesse sit unum sollicitum sapientes habitos in Graecia, placuisse opinor mirabilia quaedam (sed nihil est quod illi non persequantur argutiis): partim fugiendas esse nimias amicitias, ne necesse sit unum sollicitum
+                    </p>
+                </div>
+            </div>
             <section class="slideshow-container">
                 <div class="mySlides fade"><img src="../images/test.jpg" style="height:100%"></div>
-                 <div class="mySlides fade"><img src="../images/test2.png" style="height:100%"></div>
-                 <div class="mySlides fade"><img src="../images/test3.png" style="height:100%"></div>
+                <div class="mySlides fade"><img src="../images/test2.png" style="height:100%"></div>
+                <div class="mySlides fade"><img src="../images/test3.png" style="height:100%"></div>
             </section>
             <div class="zoom"></div>
         </div>
@@ -35,38 +44,12 @@
 
 
 
-    
-    
-    <script type="text/javascript">
-        
-var slideIndex = 1;
-showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  slides[slideIndex-1].style.display = "block";
-}
-        
-    window.addEventListener('load', function() {
-        document.body.style.opacity = 1;
-    });
-
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../script.js"></script>
     
-    </body>
-    
+
+</body>
+
 </html>
