@@ -409,6 +409,14 @@ body {
         margin: 1.25vw;
     }
 
+    body::after {
+      content: '';
+      width: 1.25vw;
+      height: 1px;
+      left: 198.75vw;
+      position: absolute;
+    }
+
     /* HOME */
     /* TEXTES EXPLICATIFS */
     .about_text {
@@ -423,12 +431,12 @@ body {
 
     /*FENETRES*/
     .entete {
-        height: 5vw;
+        height: calc(5vw - 2px);
         text-transform: uppercase;
         display: flex;
         padding: 0;
         margin: 0;
-        margin-left: 8.75vw;
+        margin-left: calc(8.75vw - 2px);
         background: white;
         line-height: 5vw;
         border-bottom: none;
@@ -768,6 +776,7 @@ body {
     #fenetre-2 {
         top: 0px;
         left: 100vw;
+        margin-right: 1.25vw;
     }
 
     #fenetre_paysage {}
