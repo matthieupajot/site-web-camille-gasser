@@ -283,7 +283,15 @@ body {
         background: grey;
         width: 25%;
         border: 1vw solid white;
-        padding: 1vw;
+        /*padding: 1vw;*/
+        overflow: hidden;
+    }
+
+    .zoom img {
+      width: auto;
+      height: 200%;
+      position: relative;
+      display: none;
     }
 
     .entete_projets {

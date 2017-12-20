@@ -18,11 +18,11 @@
         <nav class="entete_projets">
             <div class="about_project"><img src="../images/pictogrammes/about.png"></div>
             <h2 class="titre2">la chaise</h2>
-            <div class="prev" onclick="plusSlides(-1)"><img src="../images/pictogrammes/precedent.png"></div>
-            <div class="next" onclick="plusSlides(1)"><img src="../images/pictogrammes/suivant.png"></div>
+            <div class="prev" onclick="slider.index++"><img src="../images/pictogrammes/precedent.png"></div>
+            <div class="next" onclick="slider.index--"><img src="../images/pictogrammes/suivant.png"></div>
             <a class="croix_projets" href="../index.html"><img src="../images/pictogrammes/croix.png"></a>
         </nav>
-        
+
         <!--SLIDER ET TEXTE-->
         <div class="image_p">
             <div class="about_text2">
@@ -38,7 +38,9 @@
                 <div class="mySlides fade"><img src="../images/test2.png" style="height:100%"></div>
                 <div class="mySlides fade"><img src="../images/test3.png" style="height:100%"></div>
             </section>
-            <div class="zoom"></div>
+            <div class="zoom">
+              <img src="" alt="">
+            </div>
         </div>
     </section>
 
@@ -48,7 +50,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="../script.js"></script>
-    
+    <script src="../projet.js"></script>
+
 
 </body>
 
