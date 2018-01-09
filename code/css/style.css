@@ -289,7 +289,7 @@ body {
 
     .zoom img {
       width: auto;
-      height: 200%;
+      height: 400%;
       position: relative;
       display: none;
     }
@@ -1346,8 +1346,8 @@ body {
         display: none;
     }
     .slideshow-container {
-        width: 75%;
-        max-width: 75%;
+        width: 100%;
+        max-width: 100%;
         padding: 1vw;
         padding-right: 0;
     }
@@ -1677,8 +1677,8 @@ body {
         display: none;
     }
     .slideshow-container {
-        width: 75%;
-        max-width: 75%;
+        width: 100%;
+        max-width: 100%;
         padding: 1vw;
         padding-right: 0;
     }

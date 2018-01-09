@@ -47,7 +47,7 @@ jQuery(function ($) {
     $(".about_projects").on('mouseout', function () {
         $($(".about_text")[$(this).parent().parent().index()]).hide();
     });
-
+    
     /*QUAND ON APPUIE SUR LA CROIX*/
     $(".croix").click(function () {
         $(this).parent().parent().hide();
@@ -118,6 +118,7 @@ jQuery(function ($) {
     /* FONCTION DRAG */
     Array.prototype.forEach.call(document.querySelectorAll('.dragme'), function (element) {
         element.addEventListener('mousedown', function (event) {
+            console.log('hello')
             if (mustDrag()) {
                 $('.dragme').css('z-index', 1);
                 $(this).css('z-index', 100);
