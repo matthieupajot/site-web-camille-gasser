@@ -47,7 +47,22 @@ jQuery(function ($) {
     $(".about_projects").on('mouseout', function () {
         $($(".about_text")[$(this).parent().parent().index()]).hide();
     });
-    
+
+    var aboutProjectOpened = false;
+
+    $(".about_project").on('click', function () {
+      if(window.innerWidth <= 1024) {
+        if(aboutProjectOpened) {
+          $(".about_text2").show();
+        }
+        else {
+          $(".about_text2").hide();
+        }
+
+        aboutProjectOpened = !aboutProjectOpened;
+      }
+    });
+
     /*QUAND ON APPUIE SUR LA CROIX*/
     $(".croix").click(function () {
         $(this).parent().parent().hide();
@@ -163,9 +178,13 @@ window.addEventListener('load', function () {
 
 /*QUAND ON SURVOLE LE BOUTON ABOUT*/
 $(".about_project").on('mouseover', function () {
+  if(window.innerWidth > 1024) {
     $($(".about_text2").show());
+  }
 });
 
 $(".about_project").on('mouseout', function () {
+  if(window.innerWidth > 1024) {
     $($(".about_text2").hide());
+  }
 });
